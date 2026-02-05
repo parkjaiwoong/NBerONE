@@ -43,3 +43,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Build logs and temporary environments
+*.log
+.gradle_home/
+.gradle_tmp/
+key.properties
+upload-keystore.jks
