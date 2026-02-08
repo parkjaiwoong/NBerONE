@@ -13,8 +13,9 @@ class RemoteConfigService {
   // Fetch and update shop data
   Future<List<ShopModel>> fetchShopData() async {
     try {
-      // 1. Try to fetch from network
-      final response = await http.get(Uri.parse(_remoteConfigUrl));
+      // 1. Try to fetch from network (Add timestamp to bust cache)
+      final String urlWithCacheBuster = '$_remoteConfigUrl?t=${DateTime.now().millisecondsSinceEpoch}';
+      final response = await http.get(Uri.parse(urlWithCacheBuster));
 
       if (response.statusCode == 200) {
         // Success: Parse and cache
