@@ -115,6 +115,21 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         actions: [
           IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () async {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('쇼핑몰 정보를 업데이트하는 중...'), duration: Duration(seconds: 1)),
+              );
+              await _loadData();
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('업데이트 완료!'), duration: Duration(seconds: 1)),
+                );
+              }
+            },
+            tooltip: '정보 새로고침',
+          ),
+          IconButton(
             icon: const Icon(Icons.settings),
             onPressed: _openSettings,
             tooltip: '쇼핑몰 설정',

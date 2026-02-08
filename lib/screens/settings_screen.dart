@@ -72,6 +72,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(
         title: const Text('쇼핑몰 설정'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh),
+            onPressed: () async {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('최신 정보를 불러오는 중...'), duration: Duration(seconds: 1)),
+              );
+              await _loadData();
+              if (mounted) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('정보 업데이트 완료!'), duration: Duration(seconds: 1)),
+                );
+              }
+            },
+            tooltip: '정보 업데이트',
+          ),
+        ],
       ),
       body: Column(
         children: [
