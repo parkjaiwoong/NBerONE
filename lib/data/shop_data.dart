@@ -33,7 +33,7 @@ final List<ShopModel> allShops = [
   ShopModel(
     id: 'ali',
     name: '알리익스프레스',
-    url: 'http://app.ac/I3rv3iJ53',
+    url: 'https://best.aliexpress.com/',
     category: '종합/오픈마켓',
     colorValue: 0xFFFF4747,
   ),
