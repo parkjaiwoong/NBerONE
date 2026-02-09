@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'data/shop_data.dart';
 import 'models/shop_model.dart';
 import 'screens/settings_screen.dart';
+import 'screens/product_comparison_screen.dart';
 import 'services/storage_service.dart';
 import 'services/remote_config_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
   runApp(const ShoppingLauncherApp());
 }
 
@@ -107,6 +111,17 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void _openProductComparison() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ProductComparisonScreen(
+          activeShops: _activeShops,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,6 +129,11 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('원클릭 쇼핑몰'),
         centerTitle: true,
         actions: [
+          IconButton(
+            icon: const Icon(Icons.compare_arrows),
+            onPressed: _openProductComparison,
+            tooltip: '상품 비교',
+          ),
           IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: () async {

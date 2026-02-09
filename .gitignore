@@ -44,6 +44,9 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Environment variables (API keys - do not commit)
+.env
+
 # Build logs and temporary environments
 *.log
 .gradle_home/
