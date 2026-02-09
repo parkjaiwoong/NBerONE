@@ -63,11 +63,20 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
       }
     } catch (e) {
       if (mounted) {
-        final String message = e.toString().contains('host lookup') ||
-                e.toString().contains('SocketException') ||
-                e.toString().contains('Failed host lookup')
-            ? '네트워크 연결을 확인해주세요.\n(인터넷 연결, WiFi/데이터 상태 확인)'
-            : '검색 중 오류가 발생했습니다: $e';
+        final errStr = e.toString();
+        String message;
+        if (errStr.contains('host lookup') ||
+            errStr.contains('SocketException') ||
+            errStr.contains('Failed host lookup')) {
+          message = '네트워크 연결을 확인해주세요.\n(인터넷 연결, WiFi/데이터 상태 확인)';
+        } else if (errStr.contains('024') || errStr.contains('인증에 실패')) {
+          message =
+              'API 인증 오류입니다.\n'
+              '1. 네이버 개발자센터 API 설정에서 "검색" 사용 여부 확인\n'
+              '2. Playground에서 "쇼핑 검색" API로 테스트해보세요';
+        } else {
+          message = '검색 중 오류가 발생했습니다: $e';
+        }
         setState(() {
           _errorMessage = message;
           _results = [];

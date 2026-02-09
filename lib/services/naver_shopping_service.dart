@@ -10,8 +10,8 @@ import '../models/shop_model.dart';
 class NaverShoppingService {
   static const String _baseUrl = 'https://openapi.naver.com/v1/search/shop.json';
 
-  String get _clientId => dotenv.env['NAVER_CLIENT_ID'] ?? '';
-  String get _clientSecret => dotenv.env['NAVER_CLIENT_SECRET'] ?? '';
+  String get _clientId => (dotenv.env['NAVER_CLIENT_ID'] ?? '').trim();
+  String get _clientSecret => (dotenv.env['NAVER_CLIENT_SECRET'] ?? '').trim();
 
   /// 우리 앱 쇼핑몰 ID -> 네이버 API mallName 매칭 키워드
   static const Map<String, List<String>> _mallNameKeywords = {
@@ -104,11 +104,20 @@ class NaverShoppingService {
       headers: {
         'X-Naver-Client-Id': _clientId,
         'X-Naver-Client-Secret': _clientSecret,
+        'Accept': 'application/json',
       },
     );
 
     if (response.statusCode != 200) {
-      throw Exception('API 오류: ${response.statusCode} - ${response.body}');
+      // 네이버 API 에러 응답 파싱 (errorCode 024 = 인증 실패 등)
+      String errDetail = response.body;
+      try {
+        final errJson = jsonDecode(response.body) as Map<String, dynamic>?;
+        if (errJson != null && errJson['errorMessage'] != null) {
+          errDetail = '${errJson['errorMessage']} (코드: ${errJson['errorCode'] ?? ''})';
+        }
+      } catch (_) {}
+      throw Exception('API 오류: ${response.statusCode} - $errDetail');
     }
 
     final json = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
