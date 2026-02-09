@@ -56,11 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
     _loadData();
   }
 
-  Future<void> _loadData() async {
+  Future<void> _loadData({bool forceRefresh = false}) async {
     setState(() => _isLoading = true);
     
     // 1. Fetch latest shop data (Network -> Cache -> Code)
-    final List<ShopModel> allAvailableShops = await _remoteConfigService.fetchShopData();
+    final List<ShopModel> allAvailableShops = await _remoteConfigService.fetchShopData(forceRefresh: forceRefresh);
     
     // 2. Load active IDs
     final activeIds = await _storageService.loadActiveShopIds();
@@ -102,8 +102,8 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       MaterialPageRoute(builder: (context) => const SettingsScreen()),
     ).then((_) {
-      // Refresh list when returning from settings
-      _loadData();
+      // Refresh list with latest remote data when returning from settings
+      _loadData(forceRefresh: true);
     });
   }
 
@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('쇼핑몰 정보를 업데이트하는 중...'), duration: Duration(seconds: 1)),
               );
-              await _loadData();
+              await _loadData(forceRefresh: true);
               if (mounted) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('업데이트 완료!'), duration: Duration(seconds: 1)),
@@ -160,17 +160,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       const SizedBox(height: 20),
                       Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                          child: ListView.builder(
-                            itemCount: _activeShops.length,
-                            itemBuilder: (context, index) {
-                              final shop = _activeShops[index];
-                              return _buildShopButton(
-                                context,
-                                shop: shop,
-                              );
-                            },
+                        child: RefreshIndicator(
+                          onRefresh: () => _loadData(forceRefresh: true),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: ListView.builder(
+                              physics: const AlwaysScrollableScrollPhysics(),
+                              itemCount: _activeShops.length,
+                              itemBuilder: (context, index) {
+                                final shop = _activeShops[index];
+                                return _buildShopButton(
+                                  context,
+                                  shop: shop,
+                                );
+                              },
+                            ),
                           ),
                         ),
                       ),

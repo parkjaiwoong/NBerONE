@@ -9,13 +9,29 @@ class RemoteConfigService {
   static const String _remoteConfigUrl = 'https://raw.githubusercontent.com/parkjaiwoong/NBerONE/main/shops.json';
   static const String _cachedShopsKey = 'cached_shops_data';
   static const String _lastUpdateKey = 'last_remote_update';
+  static const Duration _cacheMaxAge = Duration(hours: 1);
 
-  // Fetch and update shop data
-  Future<List<ShopModel>> fetchShopData() async {
+  // Cache-Control headers to bypass CDN/proxy caching
+  static const Map<String, String> _noCacheHeaders = {
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0',
+  };
+
+  /// [forceRefresh] = true: Always fetch from network, ignore cache age
+  Future<List<ShopModel>> fetchShopData({bool forceRefresh = false}) async {
     try {
-      // 1. Try to fetch from network (Add timestamp to bust cache)
+      // Check if cache is still valid (skip network if not forced and cache is fresh)
+      if (!forceRefresh && await _isCacheFresh()) {
+        return await _loadCachedShopData();
+      }
+
+      // 1. Fetch from network with cache-busting + no-cache headers
       final String urlWithCacheBuster = '$_remoteConfigUrl?t=${DateTime.now().millisecondsSinceEpoch}';
-      final response = await http.get(Uri.parse(urlWithCacheBuster));
+      final response = await http.get(
+        Uri.parse(urlWithCacheBuster),
+        headers: _noCacheHeaders,
+      );
 
       if (response.statusCode == 200) {
         // Success: Parse and cache
@@ -41,6 +57,15 @@ class RemoteConfigService {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_cachedShopsKey, jsonString);
     await prefs.setInt(_lastUpdateKey, DateTime.now().millisecondsSinceEpoch);
+  }
+
+  /// Returns true if cached data exists and is newer than _cacheMaxAge
+  Future<bool> _isCacheFresh() async {
+    final prefs = await SharedPreferences.getInstance();
+    final lastUpdate = prefs.getInt(_lastUpdateKey);
+    if (lastUpdate == null) return false;
+    final age = DateTime.now().millisecondsSinceEpoch - lastUpdate;
+    return age < _cacheMaxAge.inMilliseconds;
   }
 
   // Load from SharedPreferences, fallback to local code
