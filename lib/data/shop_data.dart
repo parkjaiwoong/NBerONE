@@ -403,10 +403,9 @@ final List<ShopModel> allShops = [
     category: '해외직구',
     colorValue: 0xFFED2024,
   ),
-  ShopModel(
     id: 'temu',
     name: '테무 (Temu)',
-    url: 'https://www.temu.com',
+    url: 'https://temu.to/k/g4utxwwvnd6',
     category: '해외직구',
     colorValue: 0xFFFF5000,
   ),
