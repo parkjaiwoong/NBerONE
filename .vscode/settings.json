@@ -1,0 +1,9 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "emeraldwalk.runonsave.commands": [
+        {
+            "match": "\\.py$",
+            "cmd": "python ${file}"
+        }
+    ]
+}

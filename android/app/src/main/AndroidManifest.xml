@@ -41,5 +41,11 @@
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
         </intent>
+        <!-- Shopping app deep link schemes -->
+        <package android:name="com.coupang.mobile" />
+        <package android:name="com.elevenst" />
+        <package android:name="com.ebay.kr.gmarket" />
+        <package android:name="com.ebay.kr.auction" />
+        <package android:name="com.alibaba.aliexpresshd" />
     </queries>
 </manifest>

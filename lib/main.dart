@@ -196,8 +196,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  bool _isDeepLink(String url) {
+    final deepLinkKeywords = ['link.coupang.com', 'app.ac', 'temu.to'];
+    return deepLinkKeywords.any((keyword) => url.contains(keyword));
+  }
+
   Widget _buildShopButton(BuildContext context, {required ShopModel shop}) {
     final color = Color(shop.colorValue);
+    final isDeepLink = _isDeepLink(shop.url);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
@@ -229,7 +235,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
-                      Icon(Icons.shopping_bag_outlined, size: 30, color: color),
+                      Icon(
+                        isDeepLink ? Icons.shopping_bag_outlined : Icons.shopping_bag,
+                        size: 30,
+                        color: color,
+                      ),
                       const SizedBox(width: 15),
                       Expanded(
                         child: Text(
