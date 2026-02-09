@@ -63,8 +63,13 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
       }
     } catch (e) {
       if (mounted) {
+        final String message = e.toString().contains('host lookup') ||
+                e.toString().contains('SocketException') ||
+                e.toString().contains('Failed host lookup')
+            ? '네트워크 연결을 확인해주세요.\n(인터넷 연결, WiFi/데이터 상태 확인)'
+            : '검색 중 오류가 발생했습니다: $e';
         setState(() {
-          _errorMessage = '검색 중 오류가 발생했습니다: $e';
+          _errorMessage = message;
           _results = [];
           _isLoading = false;
         });
