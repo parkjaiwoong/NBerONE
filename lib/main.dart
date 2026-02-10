@@ -222,14 +222,16 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  bool _isDeepLink(String url) {
+  /// appUrl 있으면 딥링크 아이콘 (쿠팡 등 url에 파트너스 링크 있는 경우 포함)
+  bool _hasDeepLink(ShopModel shop) {
+    if (shop.appUrl != null && shop.appUrl!.isNotEmpty) return true;
     final deepLinkKeywords = ['link.coupang.com', 'app.ac', 'temu.to'];
-    return deepLinkKeywords.any((keyword) => url.contains(keyword));
+    return deepLinkKeywords.any((kw) => (shop.url).contains(kw));
   }
 
   Widget _buildShopButton(BuildContext context, {required ShopModel shop}) {
     final color = Color(shop.colorValue);
-    final isDeepLink = _isDeepLink(shop.url);
+    final isDeepLink = _hasDeepLink(shop);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
@@ -249,10 +251,10 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Row(
           children: [
-            // Main Area (Web / Fallback)
+            // Main Area: appUrl 있으면 딥링크 사용, 없으면 url (쿠팡 등 파트너스 링크는 url에 있음)
             Expanded(
               child: InkWell(
-                onTap: () => _launchURL(shop.url),
+                onTap: () => _launchURL(shop.appUrl ?? shop.url),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   bottomLeft: Radius.circular(15),

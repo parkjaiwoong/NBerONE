@@ -5,7 +5,8 @@ final List<ShopModel> allShops = [
   ShopModel(
     id: 'coupang',
     name: '쿠팡 (Coupang)',
-    url: 'https://link.coupang.com/a/dFw75O',
+    url: 'https://www.coupang.com',
+    appUrl: 'https://link.coupang.com/a/dFw75O',
     category: '종합/오픈마켓',
     colorValue: 0xFFE60F29,
   ),
@@ -613,17 +614,10 @@ final List<ShopModel> allShops = [
 
   // --- 여행 / 숙박 ---
   ShopModel(
-    id: 'nol',
-    name: 'NOL',
-    url: 'https://nol.yanolja.com/',
-    appUrl: 'http://app.ac/3jMOCPa53',
-    category: '여행/숙박',
-    colorValue: 0xFFFF0055,
-  ),
-  ShopModel(
     id: 'yanolja',
     name: '야놀자',
     url: 'https://www.yanolja.com',
+    appUrl: 'http://app.ac/3jMOCPa53', // NOL 딥링크 통합
     category: '여행/숙박',
     colorValue: 0xFFFF0055,
   ),
@@ -1111,7 +1105,8 @@ final List<ShopModel> allShops = [
   ShopModel(
     id: 'temu',
     name: '테무 (Temu)',
-    url: 'https://temu.to/k/g4utxwwvnd6',
+    url: 'https://www.temu.com',
+    appUrl: 'https://temu.to/k/g4utxwwvnd6',
     category: '해외직구',
     colorValue: 0xFFFF5000,
   ),

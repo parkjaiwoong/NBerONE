@@ -44,7 +44,7 @@ class NaverShoppingService {
     'emart': ['이마트', '이마트몰', 'emart'],
     'homeplus': ['홈플러스', 'homeplus'],
     'oasis': ['오아시스', 'oasis'],
-    'yanolja': ['야놀자', 'yanolja'],
+    'yanolja': ['야놀자', 'yanolja', 'nol'],
     'yeogi': ['여기어때', 'goodchoice'],
     'agoda': ['아고다', 'agoda'],
     'tripcom': ['트립닷컴', '트립컴', 'trip'],
