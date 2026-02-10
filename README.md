@@ -1,16 +1,26 @@
-# shoping_app
+# 원클릭 쇼핑몰 (NBerONE)
 
-A new Flutter project.
+## 로컬 테스트
 
-## Getting Started
+1. `.env.example`을 복사해 `.env` 생성 후 API 키 설정
+   ```
+   cp .env.example .env
+   # .env 에 NAVER_CLIENT_ID, NAVER_CLIENT_SECRET 입력
+   ```
 
-This project is a starting point for a Flutter application.
+2. 로컬 쇼핑몰 데이터 사용 (GitHub fetch 없이 `shop_data.dart` 사용)
+   - `.env`에 `USE_LOCAL_SHOPS=true` 추가
 
-A few resources to get you started if this is your first Flutter project:
+3. 실행
+   ```bash
+   flutter run
+   # 또는 에뮬레이터/기기 연결 후
+   flutter run -d <device_id>
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Release 빌드
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter build apk --release
+flutter build appbundle --release
+```

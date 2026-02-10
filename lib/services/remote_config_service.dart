@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/shop_model.dart';
@@ -7,6 +8,10 @@ import '../data/shop_data.dart'; // Fallback data
 class RemoteConfigService {
   // Real GitHub Raw URL
   static const String _remoteConfigUrl = 'https://raw.githubusercontent.com/parkjaiwoong/NBerONE/main/shops.json';
+
+  /// 로컬 테스트: .env에 USE_LOCAL_SHOPS=true 설정 시 shop_data.dart 사용 (네트워크/캐시 무시)
+  bool get _useLocalShops =>
+      (dotenv.env['USE_LOCAL_SHOPS'] ?? '').toLowerCase() == 'true';
   static const String _cachedShopsKey = 'cached_shops_data';
   static const String _lastUpdateKey = 'last_remote_update';
   static const Duration _cacheMaxAge = Duration(hours: 1);
@@ -20,6 +25,8 @@ class RemoteConfigService {
 
   /// [forceRefresh] = true: Always fetch from network, ignore cache age
   Future<List<ShopModel>> fetchShopData({bool forceRefresh = false}) async {
+    if (_useLocalShops) return allShops;
+
     try {
       // Check if cache is still valid (skip network if not forced and cache is fresh)
       if (!forceRefresh && await _isCacheFresh()) {
