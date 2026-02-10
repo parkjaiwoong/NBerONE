@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../models/product_comparison_model.dart';
 import '../models/shop_model.dart';
@@ -155,19 +156,48 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
 
   Future<void> _launchProductUrl(ProductComparisonItem item) async {
     final shop = _service.findShopForMall(widget.allShops, item.mallName);
-    final url = (shop != null && shop.appUrl != null && shop.appUrl!.isNotEmpty)
-        ? shop.appUrl!
-        : item.link;
-    final uri = Uri.parse(url);
-    try {
-      if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-        throw Exception('Could not launch $url');
-      }
-    } catch (e) {
+    final hasDeepLink = shop != null &&
+        shop.appUrl != null &&
+        shop.appUrl!.isNotEmpty;
+
+    if (hasDeepLink) {
+      // 딥링크 있는 경우: 상품명 복사 + 설명 표시 + 앱 열기
+      await Clipboard.setData(ClipboardData(text: item.title));
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('링크를 열 수 없습니다: $e')),
+          SnackBar(
+            content: Text(
+              '상품명이 복사되었습니다. ${item.mallName} 앱에서 검색창에 붙여넣기 후 검색해주세요.',
+            ),
+            duration: const Duration(seconds: 4),
+          ),
         );
+      }
+      final uri = Uri.parse(shop!.appUrl!);
+      try {
+        if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+          throw Exception('Could not launch ${shop.appUrl}');
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('앱을 열 수 없습니다: $e')),
+          );
+        }
+      }
+    } else {
+      // 딥링크 없는 경우: 상품 상세페이지로 바로 이동
+      final uri = Uri.parse(item.link);
+      try {
+        if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+          throw Exception('Could not launch ${item.link}');
+        }
+      } catch (e) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('링크를 열 수 없습니다: $e')),
+          );
+        }
       }
     }
   }
