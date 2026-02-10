@@ -73,15 +73,37 @@ class NaverShoppingService {
     'temu': ['테무', 'temu'],
     'yoox': ['육스', 'yoox'],
     'farfetch': ['파페치', 'farfetch'],
+    'shein': ['쉬인', 'shein'],
+    'uniqlo': ['유니클로', 'uniqlo'],
+    'clio': ['클리오', 'clio'],
+    'pulmuone': ['풀무원', 'pulmuone'],
+    'cjthemarket': ['CJ더마켓', 'cjthemarket'],
+    'lego': ['레고', 'lego'],
+    'adidas': ['아디다스', 'adidas'],
+    'stockx': ['스탁엑스', 'stockx'],
+    'ohou': ['오늘의집', 'ohou'],
+    'soomgo': ['숨고', 'soomgo'],
+    'iherb': ['아이허브', 'iherb'],
+    'jestina': ['제이에스티나', 'jestina'],
+    'lensbank': ['렌즈뱅크', 'lensbank'],
+    'lululemon': ['룰루레몬', 'lululemon'],
+    'crocs': ['크록스', 'crocs'],
   };
 
+  /// 네이버 쇼핑 검색 결과 (페이징 지원)
+  static const int defaultDisplay = 50;
+
   /// 네이버 쇼핑 검색 (가격 오름차순)
-  Future<List<ProductComparisonItem>> search(
+  /// [start] 검색 시작 위치 (1~1000), [display] 한 번에 가져올 개수 (기본 50)
+  Future<NaverSearchResult> search(
     String query, {
-    int display = 100,
+    int start = 1,
+    int display = defaultDisplay,
     List<ShopModel>? filterByShops,
   }) async {
-    if (query.trim().isEmpty) return [];
+    if (query.trim().isEmpty) {
+      return NaverSearchResult(items: [], total: 0, start: 1, display: 0);
+    }
 
     if (_clientId.isEmpty || _clientSecret.isEmpty) {
       throw NaverApiKeyException(
@@ -91,10 +113,14 @@ class NaverShoppingService {
       );
     }
 
+    final displayVal = display.clamp(1, 100);
+    final startVal = start.clamp(1, 1000);
+
     final uri = Uri.parse(_baseUrl).replace(
       queryParameters: {
         'query': query.trim(),
-        'display': display.clamp(1, 100).toString(),
+        'display': displayVal.toString(),
+        'start': startVal.toString(),
         'sort': 'asc', // 가격 낮은 순
       },
     );
@@ -121,14 +147,18 @@ class NaverShoppingService {
     }
 
     final json = jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>;
+    final total = (json['total'] as num?)?.toInt() ?? 0;
+    final startFrom = (json['start'] as num?)?.toInt() ?? startVal;
+    final displayCount = (json['display'] as num?)?.toInt() ?? displayVal;
     final items = (json['items'] as List<dynamic>?)
         ?.map((e) => ProductComparisonItem.fromJson(e as Map<String, dynamic>))
         .toList() ?? [];
 
     // 활성 쇼핑몰만 필터링
+    List<ProductComparisonItem> filtered = items;
     if (filterByShops != null && filterByShops.isNotEmpty) {
       final activeIds = filterByShops.map((s) => s.id).toSet();
-      return items.where((item) {
+      filtered = items.where((item) {
         for (final shopId in activeIds) {
           if (_matchesMall(shopId, item.mallName)) return true;
         }
@@ -136,7 +166,12 @@ class NaverShoppingService {
       }).toList();
     }
 
-    return items;
+    return NaverSearchResult(
+      items: filtered,
+      total: total,
+      start: startFrom,
+      display: displayCount,
+    );
   }
 
   bool _matchesMall(String shopId, String mallName) {
@@ -159,6 +194,24 @@ class NaverShoppingService {
     }
     return null;
   }
+}
+
+/// 네이버 쇼핑 검색 결과 (페이징 지원)
+class NaverSearchResult {
+  final List<ProductComparisonItem> items;
+  final int total;
+  final int start;
+  final int display;
+
+  NaverSearchResult({
+    required this.items,
+    required this.total,
+    required this.start,
+    required this.display,
+  });
+
+  bool get hasMore => start + display <= total && total > 0;
+  int get nextStart => start + display;
 }
 
 class NaverApiKeyException implements Exception {

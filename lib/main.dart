@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final StorageService _storageService = StorageService();
   final RemoteConfigService _remoteConfigService = RemoteConfigService();
   List<ShopModel> _activeShops = [];
+  List<ShopModel> _allShops = []; // 쇼핑몰 설정 전체 (상품비교용)
   bool _isLoading = true;
 
   @override
@@ -82,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
     
     setState(() {
       _activeShops = shops;
+      _allShops = allAvailableShops; // 설정 전체 목록 유지
       _isLoading = false;
     });
   }
@@ -116,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
       MaterialPageRoute(
         builder: (context) => ProductComparisonScreen(
-          activeShops: _activeShops,
+          allShops: _allShops,
         ),
       ),
     );

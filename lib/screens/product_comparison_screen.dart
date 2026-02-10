@@ -5,11 +5,11 @@ import '../models/shop_model.dart';
 import '../services/naver_shopping_service.dart';
 
 class ProductComparisonScreen extends StatefulWidget {
-  final List<ShopModel> activeShops;
+  final List<ShopModel> allShops;
 
   const ProductComparisonScreen({
     super.key,
-    required this.activeShops,
+    required this.allShops,
   });
 
   @override
@@ -19,15 +19,34 @@ class ProductComparisonScreen extends StatefulWidget {
 class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
   final NaverShoppingService _service = NaverShoppingService();
   final TextEditingController _searchController = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
   List<ProductComparisonItem> _results = [];
+  int _total = 0;
+  int _nextStart = 1; // API 다음 요청 start 값
+  bool _hasMore = false;
   bool _isLoading = false;
+  bool _isLoadingMore = false;
   String? _errorMessage;
   String _lastQuery = '';
 
   @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(_onScroll);
+  }
+
+  @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _onScroll() {
+    // 스크롤 끝에 도달 시 자동 더보기
+    if (!_isLoadingMore && _hasMore && _scrollController.position.pixels >= _scrollController.position.maxScrollExtent - 200) {
+      _loadMore();
+    }
   }
 
   Future<void> _search() async {
@@ -38,18 +57,26 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
       _isLoading = true;
       _errorMessage = null;
       _lastQuery = query;
+      _results = [];
+      _total = 0;
+      _nextStart = 1;
+      _hasMore = false;
     });
 
     try {
-      final items = await _service.search(
+      final result = await _service.search(
         query,
-        display: 100,
-        filterByShops: widget.activeShops,
+        start: 1,
+        display: NaverShoppingService.defaultDisplay,
+        filterByShops: widget.allShops,
       );
 
       if (mounted) {
         setState(() {
-          _results = items;
+          _results = result.items;
+          _total = result.total;
+          _nextStart = result.nextStart;
+          _hasMore = result.hasMore;
           _isLoading = false;
         });
       }
@@ -58,6 +85,9 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
         setState(() {
           _errorMessage = e.message;
           _results = [];
+          _total = 0;
+          _nextStart = 1;
+          _hasMore = false;
           _isLoading = false;
         });
       }
@@ -80,17 +110,58 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
         setState(() {
           _errorMessage = message;
           _results = [];
+          _total = 0;
+          _nextStart = 1;
+          _hasMore = false;
           _isLoading = false;
         });
       }
     }
   }
 
-  Future<void> _launchUrl(String urlString) async {
-    final uri = Uri.parse(urlString);
+  Future<void> _loadMore() async {
+    if (_isLoadingMore || !_hasMore || _lastQuery.isEmpty) return;
+
+    setState(() => _isLoadingMore = true);
+
+    try {
+      final result = await _service.search(
+        _lastQuery,
+        start: _nextStart,
+        display: NaverShoppingService.defaultDisplay,
+        filterByShops: widget.allShops,
+      );
+
+      if (mounted) {
+        setState(() {
+          _results = [..._results, ...result.items];
+          _total = result.total;
+          _nextStart = result.nextStart;
+          _hasMore = result.hasMore;
+          _isLoadingMore = false;
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoadingMore = false;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('추가 로드 실패: $e')),
+          );
+        });
+      }
+    }
+  }
+
+  Future<void> _launchProductUrl(ProductComparisonItem item) async {
+    final shop = _service.findShopForMall(widget.allShops, item.mallName);
+    final url = (shop != null && shop.appUrl != null && shop.appUrl!.isNotEmpty)
+        ? shop.appUrl!
+        : item.link;
+    final uri = Uri.parse(url);
     try {
       if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-        throw Exception('Could not launch $urlString');
+        throw Exception('Could not launch $url');
       }
     } catch (e) {
       if (mounted) {
@@ -119,7 +190,7 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
                   child: TextField(
                     controller: _searchController,
                     decoration: InputDecoration(
-                      hintText: '상품명 검색 (선택된 쇼핑몰만 조회)',
+                      hintText: '상품명 검색 (쇼핑몰 설정 전체 조회)',
                       prefixIcon: const Icon(Icons.search),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
@@ -152,11 +223,11 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
           ),
 
           // 안내 문구
-          if (widget.activeShops.isNotEmpty)
+          if (widget.allShops.isNotEmpty)
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
               child: Text(
-                '메인화면에 선택된 ${widget.activeShops.length}개 쇼핑몰만 검색됩니다.',
+                '쇼핑몰 설정에 등록된 ${widget.allShops.length}개 전체 조회됩니다.',
                 style: TextStyle(
                   fontSize: 12,
                   color: Colors.grey[600],
@@ -164,11 +235,11 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
               ),
             ),
 
-          if (widget.activeShops.isEmpty)
+          if (widget.allShops.isEmpty)
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                '메인화면에서 쇼핑몰을 먼저 선택해주세요.',
+                '쇼핑몰 설정에 등록된 쇼핑몰이 없습니다.',
                 style: TextStyle(fontSize: 14, color: Colors.grey[600]),
               ),
             ),
@@ -250,15 +321,34 @@ class _ProductComparisonScreenState extends State<ProductComparisonScreen> {
     }
 
     return ListView.builder(
+      controller: _scrollController,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      itemCount: _results.length,
+      itemCount: _results.length + (_hasMore || _isLoadingMore ? 1 : 0),
       itemBuilder: (context, index) {
+        if (index == _results.length) {
+          if (_isLoadingMore) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(vertical: 24),
+              child: Center(child: CircularProgressIndicator()),
+            );
+          }
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Center(
+              child: OutlinedButton.icon(
+                onPressed: _loadMore,
+                icon: const Icon(Icons.add),
+                label: Text('더보기 (${_results.length} / $_total)'),
+              ),
+            ),
+          );
+        }
         final item = _results[index];
         final rank = index + 1;
         return _ProductItemCard(
           item: item,
           rank: rank,
-          onTap: () => _launchUrl(item.link),
+          onTap: () => _launchProductUrl(item),
         );
       },
     );

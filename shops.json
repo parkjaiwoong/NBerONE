@@ -1,524 +1,1334 @@
 [
-    {
-        "id": "coupang",
-        "name": "쿠팡 (Coupang)",
-        "url": "https://link.coupang.com/a/dFw75O",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4293267241,
-        "isCustom": false
-    },
-    {
-        "id": "11st",
-        "name": "11번가",
-        "url": "https://www.11st.co.kr",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4294123832,
-        "isCustom": false
-    },
-    {
-        "id": "gmarket",
-        "name": "G마켓",
-        "url": "http://app.ac/v3rNo6J03",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4278364495,
-        "isCustom": false
-    },
-    {
-        "id": "auction",
-        "name": "옥션",
-        "url": "http://app.ac/6jMxh5a33",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4291231788,
-        "isCustom": false
-    },
-    {
-        "id": "ali",
-        "name": "알리익스프레스",
-        "url": "https://best.aliexpress.com/",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4294920007,
-        "isCustom": false
-    },
-    {
-        "id": "ssg",
-        "name": "SSG닷컴",
-        "url": "https://www.ssg.com",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4294949120,
-        "isCustom": false
-    },
-    {
-        "id": "wemakeprice",
-        "name": "위메프",
-        "url": "https://front.wemakeprice.com",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4291170584,
-        "isCustom": false
-    },
-    {
-        "id": "tmon",
-        "name": "티몬",
-        "url": "https://www.tmon.co.kr",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4294922240,
-        "isCustom": false
-    },
-    {
-        "id": "interpark",
-        "name": "인터파크 쇼핑",
-        "url": "https://shopping.interpark.com",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4292283417,
-        "isCustom": false
-    },
-    {
-        "id": "lotteon",
-        "name": "롯데온",
-        "url": "https://www.lotteon.com",
-        "appUrl": null,
-        "category": "종합/오픈마켓",
-        "colorValue": 4293729316,
-        "isCustom": false
-    },
-    {
-        "id": "hmall",
-        "name": "현대Hmall",
-        "url": "https://www.hmall.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4293794853,
-        "isCustom": false
-    },
-    {
-        "id": "gsshop",
-        "name": "GS SHOP",
-        "url": "https://www.gsshop.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4278231746,
-        "isCustom": false
-    },
-    {
-        "id": "cjonstyle",
-        "name": "CJ 온스타일",
-        "url": "https://display.cjonstyle.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4294593922,
-        "isCustom": false
-    },
-    {
-        "id": "lotte_home",
-        "name": "롯데홈쇼핑",
-        "url": "https://www.lotteimall.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4292487452,
-        "isCustom": false
-    },
-    {
-        "id": "nsmall",
-        "name": "NS홈쇼핑",
-        "url": "https://www.nsmall.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4293477430,
-        "isCustom": false
-    },
-    {
-        "id": "shinsegaetv",
-        "name": "신세계라이브쇼핑",
-        "url": "https://www.shinsegaetvshopping.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4294901760,
-        "isCustom": false
-    },
-    {
-        "id": "akmall",
-        "name": "AK몰",
-        "url": "https://www.akmall.com",
-        "appUrl": null,
-        "category": "홈쇼핑/백화점",
-        "colorValue": 4293263378,
-        "isCustom": false
-    },
-    {
-        "id": "musinsa",
-        "name": "무신사",
-        "url": "https://www.musinsa.com",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4278190080,
-        "isCustom": false
-    },
-    {
-        "id": "zigzag",
-        "name": "지그재그",
-        "url": "https://zigzag.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4294918273,
-        "isCustom": false
-    },
-    {
-        "id": "ably",
-        "name": "에이블리",
-        "url": "https://m.a-bly.com",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4294922584,
-        "isCustom": false
-    },
-    {
-        "id": "brandi",
-        "name": "브랜디",
-        "url": "https://www.brandi.co.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4286205439,
-        "isCustom": false
-    },
-    {
-        "id": "wconcept",
-        "name": "W컨셉",
-        "url": "https://www.wconcept.co.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4278190080,
-        "isCustom": false
-    },
-    {
-        "id": "29cm",
-        "name": "29CM",
-        "url": "https://www.29cm.co.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4278190080,
-        "isCustom": false
-    },
-    {
-        "id": "oliveyoung",
-        "name": "올리브영",
-        "url": "https://www.oliveyoung.co.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4288067072,
-        "isCustom": false
-    },
-    {
-        "id": "kream",
-        "name": "크림 (KREAM)",
-        "url": "https://kream.co.kr",
-        "appUrl": null,
-        "category": "패션/뷰티",
-        "colorValue": 4278190080,
-        "isCustom": false
-    },
-    {
-        "id": "kurly",
-        "name": "마켓컬리",
-        "url": "https://www.kurly.com",
-        "appUrl": null,
-        "category": "식품/마트",
-        "colorValue": 4284416128,
-        "isCustom": false
-    },
-    {
-        "id": "emart",
-        "name": "이마트몰",
-        "url": "https://emart.ssg.com",
-        "appUrl": null,
-        "category": "식품/마트",
-        "colorValue": 4294949120,
-        "isCustom": false
-    },
-    {
-        "id": "homeplus",
-        "name": "홈플러스",
-        "url": "https://front.homeplus.co.kr",
-        "appUrl": null,
-        "category": "식품/마트",
-        "colorValue": 4292487452,
-        "isCustom": false
-    },
-    {
-        "id": "oasis",
-        "name": "오아시스마켓",
-        "url": "https://www.oasis.co.kr",
-        "appUrl": null,
-        "category": "식품/마트",
-        "colorValue": 4283276870,
-        "isCustom": false
-    },
-    {
-        "id": "yanolja",
-        "name": "야놀자",
-        "url": "https://www.yanolja.com",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4294901845,
-        "isCustom": false
-    },
-    {
-        "id": "yeogi",
-        "name": "여기어때",
-        "url": "https://www.goodchoice.kr",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4294901760,
-        "isCustom": false
-    },
-    {
-        "id": "agoda",
-        "name": "아고다",
-        "url": "https://www.agoda.com",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4278235391,
-        "isCustom": false
-    },
-    {
-        "id": "tripcom",
-        "name": "트립닷컴",
-        "url": "https://kr.trip.com",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4280843770,
-        "isCustom": false
-    },
-    {
-        "id": "hotelscom",
-        "name": "호텔스닷컴",
-        "url": "https://kr.hotels.com",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4292030255,
-        "isCustom": false
-    },
-    {
-        "id": "airbnb",
-        "name": "에어비앤비",
-        "url": "https://www.airbnb.co.kr",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4294924895,
-        "isCustom": false
-    },
-    {
-        "id": "myrealtrip",
-        "name": "마이리얼트립",
-        "url": "https://www.myrealtrip.com",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4281046765,
-        "isCustom": false
-    },
-    {
-        "id": "klook",
-        "name": "클룩 (Klook)",
-        "url": "https://www.klook.com/ko/",
-        "appUrl": null,
-        "category": "여행/숙박",
-        "colorValue": 4294925056,
-        "isCustom": false
-    },
-    {
-        "id": "yes24",
-        "name": "예스24",
-        "url": "https://www.yes24.com",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4278223103,
-        "isCustom": false
-    },
-    {
-        "id": "aladin",
-        "name": "알라딘",
-        "url": "https://www.aladin.co.kr",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4292360569,
-        "isCustom": false
-    },
-    {
-        "id": "kyobo",
-        "name": "교보문고",
-        "url": "https://www.kyobobook.co.kr",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4282885145,
-        "isCustom": false
-    },
-    {
-        "id": "ridibooks",
-        "name": "리디북스",
-        "url": "https://ridibooks.com",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4278220761,
-        "isCustom": false
-    },
-    {
-        "id": "class101",
-        "name": "클래스101",
-        "url": "https://class101.net",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4294924800,
-        "isCustom": false
-    },
-    {
-        "id": "fastcampus",
-        "name": "패스트캠퍼스",
-        "url": "https://fastcampus.co.kr",
-        "appUrl": null,
-        "category": "도서/교육",
-        "colorValue": 4294390335,
-        "isCustom": false
-    },
-    {
-        "id": "danawa",
-        "name": "다나와",
-        "url": "https://www.danawa.com",
-        "appUrl": null,
-        "category": "가전/디지털",
-        "colorValue": 4288660529,
-        "isCustom": false
-    },
-    {
-        "id": "himart",
-        "name": "하이마트",
-        "url": "https://www.e-himart.co.kr",
-        "appUrl": null,
-        "category": "가전/디지털",
-        "colorValue": 4292487452,
-        "isCustom": false
-    },
-    {
-        "id": "etland",
-        "name": "전자랜드",
-        "url": "https://www.etland.co.kr",
-        "appUrl": null,
-        "category": "가전/디지털",
-        "colorValue": 4278202220,
-        "isCustom": false
-    },
-    {
-        "id": "compuzone",
-        "name": "컴퓨존",
-        "url": "https://www.compuzone.co.kr",
-        "appUrl": null,
-        "category": "가전/디지털",
-        "colorValue": 4278873789,
-        "isCustom": false
-    },
-    {
-        "id": "samsungcard",
-        "name": "삼성카드 다이렉트",
-        "url": "https://www.samsungcard.com",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4278222005,
-        "isCustom": false
-    },
-    {
-        "id": "hyundaicard",
-        "name": "현대카드",
-        "url": "https://www.hyundaicard.com",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4278190080,
-        "isCustom": false
-    },
-    {
-        "id": "direct_ins",
-        "name": "삼성화재 다이렉트",
-        "url": "https://direct.samsungfire.com",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4278222005,
-        "isCustom": false
-    },
-    {
-        "id": "coway",
-        "name": "코웨이 (Coway)",
-        "url": "https://www.coway.com",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4278233568,
-        "isCustom": false
-    },
-    {
-        "id": "sk_magic",
-        "name": "SK매직",
-        "url": "https://www.skmagic.com",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4293263378,
-        "isCustom": false
-    },
-    {
-        "id": "lg_electronics",
-        "name": "LG전자 베스트샵",
-        "url": "https://www.lge.co.kr",
-        "appUrl": null,
-        "category": "금융/렌탈",
-        "colorValue": 4289003572,
-        "isCustom": false
-    },
-    {
-        "id": "amazon",
-        "name": "아마존",
-        "url": "https://www.amazon.com",
-        "appUrl": null,
-        "category": "해외직구",
-        "colorValue": 4294940928,
-        "isCustom": false
-    },
-    {
-        "id": "qoo10",
-        "name": "큐텐",
-        "url": "https://www.qoo10.com",
-        "appUrl": null,
-        "category": "해외직구",
-        "colorValue": 4293730340,
-        "isCustom": false
-    },
-    {
-        "id": "temu",
-        "name": "테무 (Temu)",
-        "url": "https://temu.to/k/g4utxwwvnd6",
-        "appUrl": null,
-        "category": "해외직구",
-        "colorValue": 4294922240,
-        "isCustom": false
-    },
-    {
-        "id": "yoox",
-        "name": "육스 (YOOX)",
-        "url": "https://www.yoox.com/kr",
-        "appUrl": null,
-        "category": "해외직구",
-        "colorValue": 4281545523,
-        "isCustom": false
-    },
-    {
-        "id": "farfetch",
-        "name": "파페치",
-        "url": "https://www.farfetch.com/kr",
-        "appUrl": null,
-        "category": "해외직구",
-        "colorValue": 4278190080,
-        "isCustom": false
-    }
+  {
+    "id": "coupang",
+    "name": "쿠팡 (Coupang)",
+    "url": "https://link.coupang.com/a/dFw75O",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4293267241,
+    "isCustom": false
+  },
+  {
+    "id": "11st",
+    "name": "11번가",
+    "url": "https://www.11st.co.kr",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4294123832,
+    "isCustom": false
+  },
+  {
+    "id": "gmarket",
+    "name": "G마켓",
+    "url": "https://www.gmarket.co.kr",
+    "appUrl": "http://app.ac/C3rHCfJ43",
+    "category": "종합/오픈마켓",
+    "colorValue": 4278364495,
+    "isCustom": false
+  },
+  {
+    "id": "auction",
+    "name": "옥션",
+    "url": "https://www.auction.co.kr",
+    "appUrl": "http://app.ac/wjMOpGa73",
+    "category": "종합/오픈마켓",
+    "colorValue": 4291231788,
+    "isCustom": false
+  },
+  {
+    "id": "ali",
+    "name": "알리익스프레스",
+    "url": "https://best.aliexpress.com/",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4294920007,
+    "isCustom": false
+  },
+  {
+    "id": "ssg",
+    "name": "SSG닷컴",
+    "url": "https://www.ssg.com",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4294949120,
+    "isCustom": false
+  },
+  {
+    "id": "wemakeprice",
+    "name": "위메프",
+    "url": "https://front.wemakeprice.com",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4291170584,
+    "isCustom": false
+  },
+  {
+    "id": "tmon",
+    "name": "티몬",
+    "url": "https://www.tmon.co.kr",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4294922240,
+    "isCustom": false
+  },
+  {
+    "id": "interpark",
+    "name": "인터파크 쇼핑",
+    "url": "https://shopping.interpark.com",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4292283417,
+    "isCustom": false
+  },
+  {
+    "id": "lotteon",
+    "name": "롯데온",
+    "url": "https://www.lotteon.com",
+    "appUrl": "http://app.ac/7bCJGDl83",
+    "category": "종합/오픈마켓",
+    "colorValue": 4293729316,
+    "isCustom": false
+  },
+  {
+    "id": "eyoumall",
+    "name": "이유몰",
+    "url": "https://www.eyoumall.co.kr",
+    "appUrl": "http://app.ac/oqG7DF293",
+    "category": "종합/오픈마켓",
+    "colorValue": 4285238819,
+    "isCustom": false
+  },
+  {
+    "id": "thirtymall",
+    "name": "떠리몰",
+    "url": "https://www.thirtymall.com/",
+    "appUrl": "http://app.ac/fE6yw0S73",
+    "category": "종합/오픈마켓",
+    "colorValue": 4282477025,
+    "isCustom": false
+  },
+  {
+    "id": "lenovo",
+    "name": "레노버코리아",
+    "url": "http://www3.lenovo.com/kr/ko/",
+    "appUrl": "http://app.ac/eqG7Dc293",
+    "category": "종합/오픈마켓",
+    "colorValue": 4293010202,
+    "isCustom": false
+  },
+  {
+    "id": "dyson",
+    "name": "다이슨",
+    "url": "https://www.dyson.com/kr",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "woot",
+    "name": "woot",
+    "url": "https://www.woot.com/",
+    "appUrl": "http://app.ac/vE6ypQS73",
+    "category": "종합/오픈마켓",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "bloomingdales",
+    "name": "블루밍데일즈",
+    "url": "https://www.bloomingdales.com",
+    "appUrl": "http://app.ac/yqG72M273",
+    "category": "종합/오픈마켓",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "macys",
+    "name": "메이시스",
+    "url": "https://www.macys.com/",
+    "appUrl": null,
+    "category": "종합/오픈마켓",
+    "colorValue": 4293010202,
+    "isCustom": false
+  },
+  {
+    "id": "marshall",
+    "name": "마샬 헤드폰",
+    "url": "https://www.marshallheadphones.com/",
+    "appUrl": "http://app.ac/o3rHpbJ53",
+    "category": "종합/오픈마켓",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "hmall",
+    "name": "현대Hmall",
+    "url": "https://www.hmall.com",
+    "appUrl": "http://app.ac/JqG7Dr233",
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4293794853,
+    "isCustom": false
+  },
+  {
+    "id": "thehyundai",
+    "name": "현대백화점몰",
+    "url": "https://www.thehyundai.com",
+    "appUrl": null,
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "gsshop",
+    "name": "GS SHOP",
+    "url": "https://www.gsshop.com",
+    "appUrl": null,
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4278231746,
+    "isCustom": false
+  },
+  {
+    "id": "cjonstyle",
+    "name": "CJ 온스타일",
+    "url": "https://display.cjonstyle.com",
+    "appUrl": null,
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4294593922,
+    "isCustom": false
+  },
+  {
+    "id": "cjthemarket",
+    "name": "CJ더마켓",
+    "url": "https://www.cjthemarket.com",
+    "appUrl": "http://app.ac/lAw0Vx593",
+    "category": "식품",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "lotte_home",
+    "name": "롯데홈쇼핑",
+    "url": "https://www.lotteimall.com",
+    "appUrl": "http://app.ac/WqG7Dk253",
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4292487452,
+    "isCustom": false
+  },
+  {
+    "id": "nsmall",
+    "name": "NS홈쇼핑",
+    "url": "https://www.nsmall.com",
+    "appUrl": "http://app.ac/0jMOpya73",
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4293477430,
+    "isCustom": false
+  },
+  {
+    "id": "shinsegaetv",
+    "name": "신세계라이브쇼핑",
+    "url": "https://www.shinsegaetvshopping.com",
+    "appUrl": null,
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4294901760,
+    "isCustom": false
+  },
+  {
+    "id": "akmall",
+    "name": "AK몰",
+    "url": "https://www.akmall.com",
+    "appUrl": null,
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4293263378,
+    "isCustom": false
+  },
+  {
+    "id": "gongyoungshop",
+    "name": "공영홈쇼핑",
+    "url": "https://www.gongyoungshop.kr",
+    "appUrl": "http://app.ac/LqG72q233",
+    "category": "홈쇼핑/백화점",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "musinsa",
+    "name": "무신사",
+    "url": "https://www.musinsa.com",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "zigzag",
+    "name": "지그재그",
+    "url": "https://zigzag.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4294918273,
+    "isCustom": false
+  },
+  {
+    "id": "ably",
+    "name": "에이블리",
+    "url": "https://m.a-bly.com",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4294922584,
+    "isCustom": false
+  },
+  {
+    "id": "brandi",
+    "name": "브랜디",
+    "url": "https://www.brandi.co.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4286205439,
+    "isCustom": false
+  },
+  {
+    "id": "wconcept",
+    "name": "W컨셉",
+    "url": "https://www.wconcept.co.kr",
+    "appUrl": "http://app.ac/VbCJGnl33",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "29cm",
+    "name": "29CM",
+    "url": "https://www.29cm.co.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "oliveyoung",
+    "name": "올리브영",
+    "url": "https://www.oliveyoung.co.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4288067072,
+    "isCustom": false
+  },
+  {
+    "id": "kream",
+    "name": "크림 (KREAM)",
+    "url": "https://kream.co.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "clio",
+    "name": "클리오",
+    "url": "https://clubclio.co.kr",
+    "appUrl": "http://app.ac/kAw0ne593",
+    "category": "패션/뷰티",
+    "colorValue": 4293467747,
+    "isCustom": false
+  },
+  {
+    "id": "lensbank",
+    "name": "렌즈뱅크",
+    "url": "https://rd.lensbank.com/",
+    "appUrl": "http://app.ac/rAw0nH563",
+    "category": "패션/뷰티",
+    "colorValue": 4278238420,
+    "isCustom": false
+  },
+  {
+    "id": "netaporter",
+    "name": "네타포르테",
+    "url": "https://www.net-a-porter.com/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "posty",
+    "name": "포스티",
+    "url": "https://posty.kr/",
+    "appUrl": "http://app.ac/gqG7D4213",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "lfmall",
+    "name": "LFmall",
+    "url": "https://www.lfmall.co.kr",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "hfashionmall",
+    "name": "H패션몰",
+    "url": "https://www.hfashionmall.com",
+    "appUrl": "http://app.ac/H3rHwtJ63",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "adidas",
+    "name": "아디다스",
+    "url": "https://www.adidas.co.kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "arket",
+    "name": "ARKET",
+    "url": "https://www.arket.com/",
+    "appUrl": "http://app.ac/IbCJG3l93",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "swarovski",
+    "name": "스와로브스키",
+    "url": "https://www.swarovski.com/ko-KR/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4288371126,
+    "isCustom": false
+  },
+  {
+    "id": "cos",
+    "name": "코스코리아",
+    "url": "https://www.cos.com/ko-kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "lululemon",
+    "name": "룰루레몬 코리아",
+    "url": "https://www.lululemon.co.kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "crocs",
+    "name": "크록스 코리아",
+    "url": "https://www.crocs.co.kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278233320,
+    "isCustom": false
+  },
+  {
+    "id": "otherstories",
+    "name": "&Otherstories",
+    "url": "https://www.stories.com/kr_krw/",
+    "appUrl": "http://app.ac/YqG726263",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "theoutnet",
+    "name": "THE OUTNET",
+    "url": "https://www.theoutnet.com/ko-kr",
+    "appUrl": "http://app.ac/9bCJVMl43",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "slamjam",
+    "name": "슬램잼",
+    "url": "https://www.slamjam.com/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "stockx",
+    "name": "스탁엑스",
+    "url": "https://stockx.com/",
+    "appUrl": "http://app.ac/wE6yp6S63",
+    "category": "패션/뷰티",
+    "colorValue": 4278255360,
+    "isCustom": false
+  },
+  {
+    "id": "jestina",
+    "name": "제이에스티나",
+    "url": "https://www.jestina.co.kr",
+    "appUrl": "http://app.ac/DbCJVwl73",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "joseph",
+    "name": "조셉",
+    "url": "https://www.joseph-fashion.com/",
+    "appUrl": "http://app.ac/zbCJVGl63",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "uniqlo",
+    "name": "유니클로",
+    "url": "https://www.uniqlo.com/kr/ko/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "paulsmith",
+    "name": "폴스미스",
+    "url": "https://www.paulsmith.co.uk/",
+    "appUrl": "http://app.ac/ibCJV2l23",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "fwrd",
+    "name": "FWRD",
+    "url": "https://www.fwrd.com/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "finishline",
+    "name": "피니쉬 라인",
+    "url": "https://www.finishline.com",
+    "appUrl": "http://app.ac/TjMOGva53",
+    "category": "패션/뷰티",
+    "colorValue": 4294901760,
+    "isCustom": false
+  },
+  {
+    "id": "benetton",
+    "name": "베네통몰",
+    "url": "https://www.benettonmall.com/",
+    "appUrl": "http://app.ac/o3rHwNJ03",
+    "category": "패션/뷰티",
+    "colorValue": 4278223933,
+    "isCustom": false
+  },
+  {
+    "id": "shein",
+    "name": "쉬인",
+    "url": "https://kr.shein.com/",
+    "appUrl": "http://app.ac/TbCJVyl83",
+    "category": "패션/뷰티",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "charleskeith",
+    "name": "찰스앤키스",
+    "url": "https://www.charleskeith.com/kr",
+    "appUrl": "http://app.ac/obCJVOl83",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "thedoublef",
+    "name": "더더블에프",
+    "url": "https://www.thedoublef.com/",
+    "appUrl": "http://app.ac/XE6ypdS43",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "giglio",
+    "name": "질리오닷컴",
+    "url": "https://www.giglio.com/ko-kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "antonioli",
+    "name": "안토니올리",
+    "url": "https://www.antonioli.eu",
+    "appUrl": "http://app.ac/8qG72j283",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "brownsfashion",
+    "name": "브라운스",
+    "url": "https://brownsfashion.com",
+    "appUrl": "http://app.ac/CE6yGlS73",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "mytheresa",
+    "name": "마이테레사",
+    "url": "https://www.mytheresa.com",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "mrporter",
+    "name": "미스터포터",
+    "url": "https://www.mrporter.com/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "asos",
+    "name": "아소스",
+    "url": "https://www.asos.com/kr/",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4294901760,
+    "isCustom": false
+  },
+  {
+    "id": "modaoperandi",
+    "name": "모다 오페란디",
+    "url": "https://www.modaoperandi.com/",
+    "appUrl": "http://app.ac/7Aw0nm573",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "jomashop",
+    "name": "조마샵",
+    "url": "https://www.jomashop.com",
+    "appUrl": null,
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "ashford",
+    "name": "애쉬포드",
+    "url": "https://www.ashford.com",
+    "appUrl": "http://app.ac/yAw0Dq503",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "lncc",
+    "name": "ln-cc",
+    "url": "https://asia.ln-cc.com/ko/",
+    "appUrl": "http://app.ac/ubCJnjl33",
+    "category": "패션/뷰티",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "kurly",
+    "name": "마켓컬리",
+    "url": "https://www.kurly.com",
+    "appUrl": null,
+    "category": "식품/마트",
+    "colorValue": 4284416128,
+    "isCustom": false
+  },
+  {
+    "id": "emart",
+    "name": "이마트몰",
+    "url": "https://emart.ssg.com",
+    "appUrl": "http://app.ac/AE6yw2S23",
+    "category": "식품/마트",
+    "colorValue": 4294949120,
+    "isCustom": false
+  },
+  {
+    "id": "homeplus",
+    "name": "홈플러스",
+    "url": "https://front.homeplus.co.kr",
+    "appUrl": null,
+    "category": "식품/마트",
+    "colorValue": 4292487452,
+    "isCustom": false
+  },
+  {
+    "id": "oasis",
+    "name": "오아시스마켓",
+    "url": "https://www.oasis.co.kr",
+    "appUrl": null,
+    "category": "식품/마트",
+    "colorValue": 4283276870,
+    "isCustom": false
+  },
+  {
+    "id": "pulmuone",
+    "name": "풀무원",
+    "url": "https://shop.pulmuone.co.kr",
+    "appUrl": "http://app.ac/XbCJGUl53",
+    "category": "식품/마트",
+    "colorValue": 4283215696,
+    "isCustom": false
+  },
+  {
+    "id": "boribori",
+    "name": "보리보리",
+    "url": "https://m.boribori.co.kr/home",
+    "appUrl": "http://app.ac/g3rHCZJ53",
+    "category": "유아/아동",
+    "colorValue": 4294948545,
+    "isCustom": false
+  },
+  {
+    "id": "lego",
+    "name": "레고 코리아",
+    "url": "https://www.lego.com/ko-kr/",
+    "appUrl": null,
+    "category": "유아/아동",
+    "colorValue": 4294956800,
+    "isCustom": false
+  },
+  {
+    "id": "babybjorn",
+    "name": "Babybjorn",
+    "url": "https://www.babybjorn.kr/",
+    "appUrl": "http://app.ac/gAw0Dc543",
+    "category": "유아/아동",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "nol",
+    "name": "NOL",
+    "url": "https://nol.yanolja.com/",
+    "appUrl": "http://app.ac/3jMOCPa53",
+    "category": "여행/숙박",
+    "colorValue": 4294901845,
+    "isCustom": false
+  },
+  {
+    "id": "yanolja",
+    "name": "야놀자",
+    "url": "https://www.yanolja.com",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4294901845,
+    "isCustom": false
+  },
+  {
+    "id": "usimsa",
+    "name": "유심사",
+    "url": "https://www.usimsa.com/",
+    "appUrl": "http://app.ac/1E6ywtS93",
+    "category": "여행/숙박",
+    "colorValue": 4280391411,
+    "isCustom": false
+  },
+  {
+    "id": "yeogi",
+    "name": "여기어때",
+    "url": "https://www.goodchoice.kr",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4294901760,
+    "isCustom": false
+  },
+  {
+    "id": "agoda",
+    "name": "아고다",
+    "url": "https://www.agoda.com",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4278235391,
+    "isCustom": false
+  },
+  {
+    "id": "tripcom",
+    "name": "트립닷컴",
+    "url": "https://kr.trip.com",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4280843770,
+    "isCustom": false
+  },
+  {
+    "id": "hotelscom",
+    "name": "호텔스닷컴",
+    "url": "https://kr.hotels.com",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4292030255,
+    "isCustom": false
+  },
+  {
+    "id": "airbnb",
+    "name": "에어비앤비",
+    "url": "https://www.airbnb.co.kr",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4294924895,
+    "isCustom": false
+  },
+  {
+    "id": "myrealtrip",
+    "name": "마이리얼트립",
+    "url": "https://www.myrealtrip.com",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4281046765,
+    "isCustom": false
+  },
+  {
+    "id": "klook",
+    "name": "클룩 (Klook)",
+    "url": "https://www.klook.com/ko/",
+    "appUrl": "http://app.ac/OqG7Di203",
+    "category": "여행/숙박",
+    "colorValue": 4294925056,
+    "isCustom": false
+  },
+  {
+    "id": "expedia",
+    "name": "익스피디아",
+    "url": "https://www.expedia.co.kr",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4278203238,
+    "isCustom": false
+  },
+  {
+    "id": "interparktour",
+    "name": "NOL 인터파크투어",
+    "url": "https://mtravel.interpark.com",
+    "appUrl": "http://app.ac/RE6ywvS93",
+    "category": "여행/숙박",
+    "colorValue": 4292283417,
+    "isCustom": false
+  },
+  {
+    "id": "ttang",
+    "name": "땡처리닷컴",
+    "url": "https://www.ttang.com",
+    "appUrl": "http://app.ac/kqG7Dh243",
+    "category": "여행/숙박",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "rakuten",
+    "name": "라쿠텐 트래블",
+    "url": "https://travel.rakuten.com",
+    "appUrl": "http://app.ac/VqG7DY233",
+    "category": "여행/숙박",
+    "colorValue": 4290707456,
+    "isCustom": false
+  },
+  {
+    "id": "jejupass",
+    "name": "제주패스",
+    "url": "https://www.jejupass.com",
+    "appUrl": "http://app.ac/OE6ypjS33",
+    "category": "여행/숙박",
+    "colorValue": 4278233195,
+    "isCustom": false
+  },
+  {
+    "id": "hotelscombined",
+    "name": "호텔스컴바인",
+    "url": "https://www.hotelscombined.co.kr",
+    "appUrl": "http://app.ac/YjMOGXa83",
+    "category": "여행/숙박",
+    "colorValue": 4278233320,
+    "isCustom": false
+  },
+  {
+    "id": "airalo",
+    "name": "Airalo (eSIM)",
+    "url": "https://www.airalo.com/ko",
+    "appUrl": "http://app.ac/5jMOGPa53",
+    "category": "여행/숙박",
+    "colorValue": 4278238420,
+    "isCustom": false
+  },
+  {
+    "id": "rentalcars",
+    "name": "렌탈카스",
+    "url": "https://www.rentalcars.com",
+    "appUrl": "http://app.ac/W3rHwIJ83",
+    "category": "여행/숙박",
+    "colorValue": 4280391411,
+    "isCustom": false
+  },
+  {
+    "id": "gocity",
+    "name": "Go city",
+    "url": "https://gocity.com/ko",
+    "appUrl": "http://app.ac/dtpoDoM73",
+    "category": "여행/숙박",
+    "colorValue": 4278238420,
+    "isCustom": false
+  },
+  {
+    "id": "kkday",
+    "name": "케이케이데이",
+    "url": "https://www.kkday.com/ko",
+    "appUrl": "http://app.ac/AbCJnel93",
+    "category": "여행/숙박",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "ihg",
+    "name": "IHG",
+    "url": "https://www.ihg.com/",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4291559424,
+    "isCustom": false
+  },
+  {
+    "id": "traveloka",
+    "name": "트래블로카",
+    "url": "https://www.traveloka.com/ko-kr",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "booking",
+    "name": "부킹닷컴",
+    "url": "https://www.booking.com/",
+    "appUrl": null,
+    "category": "여행/숙박",
+    "colorValue": 4278203776,
+    "isCustom": false
+  },
+  {
+    "id": "raileurope",
+    "name": "레일유럽",
+    "url": "https://www.raileurope.co.kr",
+    "appUrl": "http://app.ac/mjMOG9a33",
+    "category": "여행/숙박",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "soomgo",
+    "name": "숨고",
+    "url": "https://soomgo.com/",
+    "appUrl": "http://app.ac/a3rHCtJ73",
+    "category": "생활/인테리어",
+    "colorValue": 4280391411,
+    "isCustom": false
+  },
+  {
+    "id": "ohou",
+    "name": "오늘의집",
+    "url": "https://ohou.se/",
+    "appUrl": null,
+    "category": "생활/인테리어",
+    "colorValue": 4294929152,
+    "isCustom": false
+  },
+  {
+    "id": "yes24",
+    "name": "예스24",
+    "url": "https://www.yes24.com",
+    "appUrl": "http://app.ac/DqG7DG263",
+    "category": "도서/교육",
+    "colorValue": 4278223103,
+    "isCustom": false
+  },
+  {
+    "id": "aladin",
+    "name": "알라딘",
+    "url": "https://www.aladin.co.kr",
+    "appUrl": null,
+    "category": "도서/교육",
+    "colorValue": 4292360569,
+    "isCustom": false
+  },
+  {
+    "id": "kyobo",
+    "name": "교보문고",
+    "url": "https://www.kyobobook.co.kr",
+    "appUrl": "http://app.ac/NE6ywCS63",
+    "category": "도서/교육",
+    "colorValue": 4282885145,
+    "isCustom": false
+  },
+  {
+    "id": "ridibooks",
+    "name": "리디북스",
+    "url": "https://ridibooks.com",
+    "appUrl": null,
+    "category": "도서/교육",
+    "colorValue": 4278220761,
+    "isCustom": false
+  },
+  {
+    "id": "class101",
+    "name": "클래스101",
+    "url": "https://class101.net",
+    "appUrl": null,
+    "category": "도서/교육",
+    "colorValue": 4294924800,
+    "isCustom": false
+  },
+  {
+    "id": "fastcampus",
+    "name": "패스트캠퍼스",
+    "url": "https://fastcampus.co.kr",
+    "appUrl": null,
+    "category": "도서/교육",
+    "colorValue": 4294390335,
+    "isCustom": false
+  },
+  {
+    "id": "mootoon",
+    "name": "무툰",
+    "url": "https://m.mootoon.co.kr",
+    "appUrl": "http://app.ac/2qG7D0223",
+    "category": "도서/교육",
+    "colorValue": 4288423856,
+    "isCustom": false
+  },
+  {
+    "id": "ypbooks",
+    "name": "인터넷영풍문고",
+    "url": "https://www.ypbooks.co.kr",
+    "appUrl": "http://app.ac/fAw0nR533",
+    "category": "도서/교육",
+    "colorValue": 4279592384,
+    "isCustom": false
+  },
+  {
+    "id": "udemy",
+    "name": "udemy",
+    "url": "https://www.udemy.com",
+    "appUrl": "http://app.ac/pqG72i293",
+    "category": "도서/교육",
+    "colorValue": 4288951792,
+    "isCustom": false
+  },
+  {
+    "id": "qtoon",
+    "name": "큐툰",
+    "url": "https://www.qtoon.co.kr/",
+    "appUrl": "http://app.ac/hjMOVea63",
+    "category": "도서/교육",
+    "colorValue": 4280391411,
+    "isCustom": false
+  },
+  {
+    "id": "danawa",
+    "name": "다나와",
+    "url": "https://www.danawa.com",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4288660529,
+    "isCustom": false
+  },
+  {
+    "id": "himart",
+    "name": "하이마트",
+    "url": "https://www.e-himart.co.kr",
+    "appUrl": "http://app.ac/TjMOpPa23",
+    "category": "가전/디지털",
+    "colorValue": 4292487452,
+    "isCustom": false
+  },
+  {
+    "id": "etland",
+    "name": "전자랜드",
+    "url": "https://www.etland.co.kr",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4278202220,
+    "isCustom": false
+  },
+  {
+    "id": "compuzone",
+    "name": "컴퓨존",
+    "url": "https://www.compuzone.co.kr",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4278873789,
+    "isCustom": false
+  },
+  {
+    "id": "apple",
+    "name": "Apple",
+    "url": "https://www.apple.com/kr/",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "nordvpn",
+    "name": "NORDVPN",
+    "url": "https://nordvpn.com/ko/",
+    "appUrl": "http://app.ac/53rHCYJ53",
+    "category": "가전/디지털",
+    "colorValue": 4282812415,
+    "isCustom": false
+  },
+  {
+    "id": "adobe",
+    "name": "어도비",
+    "url": "https://www.adobe.com/kr/",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4294901760,
+    "isCustom": false
+  },
+  {
+    "id": "expressvpn",
+    "name": "익스프레스VPN",
+    "url": "https://www.expressvpn.com",
+    "appUrl": "http://app.ac/dtpoDeM63",
+    "category": "가전/디지털",
+    "colorValue": 4292491584,
+    "isCustom": false
+  },
+  {
+    "id": "surfshark",
+    "name": "Surfshark",
+    "url": "https://surfshark.com/",
+    "appUrl": "http://app.ac/5tpoDXM03",
+    "category": "가전/디지털",
+    "colorValue": 4278239672,
+    "isCustom": false
+  },
+  {
+    "id": "shutterstock",
+    "name": "셔터스톡",
+    "url": "https://www.shutterstock.com/ko",
+    "appUrl": null,
+    "category": "가전/디지털",
+    "colorValue": 4293800806,
+    "isCustom": false
+  },
+  {
+    "id": "appstory",
+    "name": "앱스토리몰",
+    "url": "https://c.appstory.co.kr/",
+    "appUrl": "http://app.ac/CAw0nT543",
+    "category": "가전/디지털",
+    "colorValue": 4278216447,
+    "isCustom": false
+  },
+  {
+    "id": "fanatical",
+    "name": "파나티컬",
+    "url": "https://www.fanatical.com",
+    "appUrl": "http://app.ac/pqG7uq243",
+    "category": "가전/디지털",
+    "colorValue": 4294927872,
+    "isCustom": false
+  },
+  {
+    "id": "samsungcard",
+    "name": "삼성카드 다이렉트",
+    "url": "https://www.samsungcard.com",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4278222005,
+    "isCustom": false
+  },
+  {
+    "id": "hyundaicard",
+    "name": "현대카드",
+    "url": "https://www.hyundaicard.com",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "direct_ins",
+    "name": "삼성화재 다이렉트",
+    "url": "https://direct.samsungfire.com",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4278222005,
+    "isCustom": false
+  },
+  {
+    "id": "coway",
+    "name": "코웨이 (Coway)",
+    "url": "https://www.coway.com",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4278233568,
+    "isCustom": false
+  },
+  {
+    "id": "sk_magic",
+    "name": "SK매직",
+    "url": "https://www.skmagic.com",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4293263378,
+    "isCustom": false
+  },
+  {
+    "id": "lg_electronics",
+    "name": "LG전자 베스트샵",
+    "url": "https://www.lge.co.kr",
+    "appUrl": null,
+    "category": "금융/렌탈",
+    "colorValue": 4289003572,
+    "isCustom": false
+  },
+  {
+    "id": "nicecredit",
+    "name": "NICE지키미",
+    "url": "https://www.credit.co.kr/",
+    "appUrl": "http://app.ac/vtpoDAM73",
+    "category": "금융/렌탈",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "signgate",
+    "name": "한국정보인증",
+    "url": "https://www.signgate.com",
+    "appUrl": "http://app.ac/njMOGGa03",
+    "category": "금융/렌탈",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "barobill",
+    "name": "바로빌",
+    "url": "https://www.barobill.co.kr/",
+    "appUrl": "http://app.ac/HjMOGSa03",
+    "category": "금융/렌탈",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "allcredit",
+    "name": "올크레딧",
+    "url": "https://www.allcredit.co.kr",
+    "appUrl": "http://app.ac/JqG7uA213",
+    "category": "금융/렌탈",
+    "colorValue": 4278216371,
+    "isCustom": false
+  },
+  {
+    "id": "iherb",
+    "name": "아이허브",
+    "url": "https://kr.iherb.com",
+    "appUrl": "http://app.ac/StponnM13",
+    "category": "건강",
+    "colorValue": 4283215696,
+    "isCustom": false
+  },
+  {
+    "id": "tstation",
+    "name": "티스테이션",
+    "url": "https://www.tstation.com/",
+    "appUrl": "http://app.ac/TtponZM03",
+    "category": "기타",
+    "colorValue": 4284513675,
+    "isCustom": false
+  },
+  {
+    "id": "biteme",
+    "name": "바잇미",
+    "url": "https://www.biteme.co.kr/",
+    "appUrl": "http://app.ac/CE6ypTS13",
+    "category": "기타",
+    "colorValue": 4294924066,
+    "isCustom": false
+  },
+  {
+    "id": "tigerbooking",
+    "name": "타이거부킹",
+    "url": "https://www.tigerbooking.golf",
+    "appUrl": "http://app.ac/3E6yp7S33",
+    "category": "기타",
+    "colorValue": 4283215696,
+    "isCustom": false
+  },
+  {
+    "id": "amazon",
+    "name": "아마존",
+    "url": "https://www.amazon.com",
+    "appUrl": null,
+    "category": "해외직구",
+    "colorValue": 4294940928,
+    "isCustom": false
+  },
+  {
+    "id": "qoo10",
+    "name": "큐텐",
+    "url": "https://www.qoo10.com",
+    "appUrl": null,
+    "category": "해외직구",
+    "colorValue": 4293730340,
+    "isCustom": false
+  },
+  {
+    "id": "temu",
+    "name": "테무 (Temu)",
+    "url": "https://temu.to/k/g4utxwwvnd6",
+    "appUrl": null,
+    "category": "해외직구",
+    "colorValue": 4294922240,
+    "isCustom": false
+  },
+  {
+    "id": "yoox",
+    "name": "육스 (YOOX)",
+    "url": "https://www.yoox.com/kr",
+    "appUrl": null,
+    "category": "해외직구",
+    "colorValue": 4281545523,
+    "isCustom": false
+  },
+  {
+    "id": "farfetch",
+    "name": "파페치",
+    "url": "https://www.farfetch.com/kr",
+    "appUrl": "http://app.ac/nE6yw9S93",
+    "category": "해외직구",
+    "colorValue": 4278190080,
+    "isCustom": false
+  },
+  {
+    "id": "hbx",
+    "name": "HBX",
+    "url": "https://hbx.com",
+    "appUrl": "http://app.ac/OqG72m243",
+    "category": "해외직구",
+    "colorValue": 4278190080,
+    "isCustom": false
+  }
 ]
