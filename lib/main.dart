@@ -58,7 +58,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    _loadData();
+    // 앱 시작 시 항상 GitHub에서 최신 shops.json 가져오기 (캐시 무시)
+    _loadData(forceRefresh: true);
   }
 
   Future<void> _loadData({bool forceRefresh = false}) async {
