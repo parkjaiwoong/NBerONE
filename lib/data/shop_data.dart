@@ -14,6 +14,7 @@ final List<ShopModel> allShops = [
     id: '11st',
     name: '11번가',
     url: 'https://www.11st.co.kr',
+    appUrl: 'http://app.ac/pAwZE7593',
     category: '종합/오픈마켓',
     colorValue: 0xFFF32138,
   ),
@@ -91,6 +92,14 @@ final List<ShopModel> allShops = [
     appUrl: 'http://app.ac/fE6yw0S73',
     category: '종합/오픈마켓',
     colorValue: 0xFF4169E1,
+  ),
+  ShopModel(
+    id: 'misope',
+    name: '미소페 (Misope)',
+    url: 'https://www.misope.co.kr/',
+    appUrl: 'http://app.ac/oqGsbx243',
+    category: '종합/오픈마켓',
+    colorValue: 0xFF2E7D32,
   ),
   ShopModel(
     id: 'lenovo',

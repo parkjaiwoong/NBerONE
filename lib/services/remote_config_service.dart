@@ -6,17 +6,19 @@ import '../models/shop_model.dart';
 import '../data/shop_data.dart'; // Fallback data
 
 class RemoteConfigService {
-  // Real GitHub Raw URL
-  static const String _remoteConfigUrl = 'https://raw.githubusercontent.com/parkjaiwoong/NBerONE/main/shops.json';
+  static const String _githubRawUrl =
+      'https://raw.githubusercontent.com/parkjaiwoong/NBerONE/main/shops.json';
+  // forceRefresh 시 jsDelivr 사용 (다른 CDN, 캐시 신선도 개선)
+  static const String _jsdelivrUrl =
+      'https://cdn.jsdelivr.net/gh/parkjaiwoong/NBerONE@main/shops.json';
 
   /// 로컬 테스트: .env에 USE_LOCAL_SHOPS=true 설정 시 shop_data.dart 사용 (네트워크/캐시 무시)
   bool get _useLocalShops =>
       (dotenv.env['USE_LOCAL_SHOPS'] ?? '').toLowerCase() == 'true';
   static const String _cachedShopsKey = 'cached_shops_data';
   static const String _lastUpdateKey = 'last_remote_update';
-  static const Duration _cacheMaxAge = Duration(hours: 1);
+  static const Duration _cacheMaxAge = Duration(minutes: 30);
 
-  // Cache-Control headers to bypass CDN/proxy caching
   static const Map<String, String> _noCacheHeaders = {
     'Cache-Control': 'no-cache, no-store, must-revalidate',
     'Pragma': 'no-cache',
@@ -28,33 +30,49 @@ class RemoteConfigService {
     if (_useLocalShops) return allShops;
 
     try {
-      // Check if cache is still valid (skip network if not forced and cache is fresh)
       if (!forceRefresh && await _isCacheFresh()) {
         return await _loadCachedShopData();
       }
 
-      // 1. Fetch from network with cache-busting + no-cache headers
-      final String urlWithCacheBuster = '$_remoteConfigUrl?t=${DateTime.now().millisecondsSinceEpoch}';
+      // forceRefresh 시 jsDelivr 사용 (캐시 우회), 일반 요청은 GitHub raw
+      final baseUrl = forceRefresh ? _jsdelivrUrl : _githubRawUrl;
+      final urlWithBuster =
+          '$baseUrl?v=${DateTime.now().millisecondsSinceEpoch}';
       final response = await http.get(
-        Uri.parse(urlWithCacheBuster),
+        Uri.parse(urlWithBuster),
         headers: _noCacheHeaders,
       );
 
       if (response.statusCode == 200) {
-        // Success: Parse and cache
         final String jsonBody = utf8.decode(response.bodyBytes);
         final List<dynamic> jsonList = jsonDecode(jsonBody);
         final List<ShopModel> remoteShops = jsonList
             .map((json) => ShopModel.fromJson(json))
             .toList();
-            
         await _cacheShopData(jsonBody);
         return remoteShops;
-      } else {
-        throw Exception('Failed to load remote config');
       }
+
+      // 200 아니면 forceRefresh일 때 GitHub raw로 재시도
+      if (forceRefresh && baseUrl == _jsdelivrUrl) {
+        final fallbackUrl =
+            '$_githubRawUrl?v=${DateTime.now().millisecondsSinceEpoch}';
+        final fallback = await http.get(
+          Uri.parse(fallbackUrl),
+          headers: _noCacheHeaders,
+        );
+        if (fallback.statusCode == 200) {
+          final jsonBody = utf8.decode(fallback.bodyBytes);
+          final jsonList = jsonDecode(jsonBody) as List<dynamic>;
+          final remoteShops = jsonList
+              .map((json) => ShopModel.fromJson(json as Map<String, dynamic>))
+              .toList();
+          await _cacheShopData(jsonBody);
+          return remoteShops;
+        }
+      }
+      throw Exception('Failed to load remote config');
     } catch (e) {
-      // 2. Error or Offline: Try to load from local cache
       return await _loadCachedShopData();
     }
   }

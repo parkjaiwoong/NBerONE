@@ -24,9 +24,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _loadData(); // Load data
   }
 
-  Future<void> _loadData() async {
-    // Fetch dynamic shops
-    final shops = await _remoteConfigService.fetchShopData();
+  Future<void> _loadData({bool forceRefresh = false}) async {
+    final shops = await _remoteConfigService.fetchShopData(forceRefresh: forceRefresh);
     final ids = await _storageService.loadActiveShopIds();
     
     setState(() {
@@ -79,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('최신 정보를 불러오는 중...'), duration: Duration(seconds: 1)),
               );
-              await _loadData();
+              await _loadData(forceRefresh: true);
               if (mounted) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('정보 업데이트 완료!'), duration: Duration(seconds: 1)),

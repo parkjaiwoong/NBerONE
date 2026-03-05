@@ -12,7 +12,7 @@
     "id": "11st",
     "name": "11번가",
     "url": "https://www.11st.co.kr",
-    "appUrl": null,
+    "appUrl": "http://app.ac/pAwZE7593",
     "category": "종합/오픈마켓",
     "colorValue": 4294123832,
     "isCustom": false
@@ -105,6 +105,15 @@
     "appUrl": "http://app.ac/fE6yw0S73",
     "category": "종합/오픈마켓",
     "colorValue": 4282477025,
+    "isCustom": false
+  },
+  {
+    "id": "misope",
+    "name": "미소페 (Misope)",
+    "url": "https://www.misope.co.kr/",
+    "appUrl": "http://app.ac/oqGsbx243",
+    "category": "종합/오픈마켓",
+    "colorValue": 4281236786,
     "isCustom": false
   },
   {
